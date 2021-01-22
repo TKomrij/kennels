@@ -11,7 +11,7 @@ export const LocationList = () => {
   useEffect(() => {
     console.log("LocationList: useEffect - getLocations")
     getLocations()
-
+  
   }, [])
 
 
