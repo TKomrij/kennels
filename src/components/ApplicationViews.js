@@ -3,9 +3,10 @@ import { Route } from "react-router-dom"
 import { Home } from "./Home"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
-import { AnimalForm } from "./animal/AnimalCard"
+import { AnimalForm} from "./animal/Animalform"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
+import { EmployeeForm } from "./employee/EmployeeForm"
 import { CustomerProvider } from "./customer/CustomerProvider"
 import { CustomerList } from "./customer/CustomerList"
 import { LocationProvider } from "./location/LocationProvider"
@@ -25,27 +26,27 @@ export const ApplicationViews = () => {
                         <Route exact path="/animals/create">
                             <AnimalForm />
                         </Route>
-                    </CustomerProvider>
-                </LocationProvider>
-            </AnimalProvider>
-            
-            <CustomerProvider>
-                <LocationProvider>
-                    <AnimalProvider>
+
                         <Route exact path="/animals">
                             <h2>Animals</h2>
                             <AnimalList />
                         </Route>
-                    </AnimalProvider>
+                    </CustomerProvider>
                 </LocationProvider>
-            </CustomerProvider>
+            </AnimalProvider>
+        
+            <LocationProvider>
+                <EmployeeProvider>
+                    <Route exact path="/employees/create">
+                        <EmployeeForm />
+                    </Route>
 
-            <EmployeeProvider>
-                <Route exact path="/employees">
-                    <h2>Employees</h2>
-                    <EmployeeList />
-                </Route>
-            </EmployeeProvider>
+                    <Route exact path="/employees">
+                        <h2>Employees</h2>
+                        <EmployeeList />
+                    </Route>
+                </EmployeeProvider>
+            </LocationProvider>
 
         
             <CustomerProvider>
